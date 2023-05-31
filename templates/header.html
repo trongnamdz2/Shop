@@ -1,0 +1,33 @@
+<div class="contact-container">
+    <p class="contact">Liên hệ ngay</p>
+    <p class="contact">Support</p>
+</div>
+<header class="group">
+    <nav class="group">
+        <ul>
+            <li><a href="{% url 'home' %}" class="logo">Logo</a></li>
+            <li>
+                <form action="{% url 'home' %}" method="get">
+                    <input type="text" name="search" class="search-bar"><button type="submit" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </li>
+            {% if request.user.is_authenticated %}
+                <li><p class="welcome">Welcome, {{request.user}}</p></li>
+                <li><a href="" class="func-button fa fa-bell"></a></li>
+                {% if request.user.info.admin %}
+                    <li><a href="{% url 'admin' %}" class="func-button fa fa-dashboard"></a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}" class="func-button fa fa-sign-out"></a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="func-button fa fa-user"></a></li>
+            {% endif %}
+            <li><a href="{% url 'cart' %}" class="func-button cart"><i class="fa fa-shopping-cart" aria-hidden="true">{% if carted > 0 %}<p class="cart-notification">{{carted}}</p>{% endif %}</i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="category-list">
+    {% for i in category %}
+        <a href="{% url 'category' i.slug %}" class="category {% if i.slug in request.path %}active{% endif %}">{{i.name}}</a>
+    {% endfor %}
+</div>

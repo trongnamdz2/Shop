@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+
+nav li {
+    list-style: none;
+    float: left;
+    display: block;
+    margin-right: 2rem;
+}
+
+
+header {
+    width: 100%;
+    height: 5rem;
+    background-color: whitesmoke;
+    color: black;
+    padding-top: .3rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+
+nav {
+    display: inline-block;
+}
+
+
+.logo {
+    font-size: 3rem;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    background-color: white;
+    font-weight: bold;
+    color: rgb(80, 2, 111);
+    border-radius: .5rem;
+}
+
+.search-bar {
+    width: 18rem;
+    height: auto;
+    font-size: 1.6rem;
+    margin-top: .6rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    border: .1rem solid rgb(80, 2, 111);
+}
+
+.search-bar:focus {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+.search-button {
+    width: auto;
+    height: auto;
+    font-size: 1.6rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: .1rem solid rgb(80, 2, 111);
+    border-left: none;
+}
+
+.welcome {
+    margin-top: 1rem;
+}
+
+.func-button {
+    display: block;
+    position: relative;
+    margin-top: .5rem;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    background-color: white;
+    color: rgb(80, 2, 111);
+    border-radius: .5rem;
+    font-weight: bold;
+}
+
+.func-button:hover {
+    background-color: rgb(80, 2, 111);
+    color: white;
+}
+
+.contact-container {
+    background-color: rgb(50, 50, 50);
+}
+
+.contact {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    margin-top: .3rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    position: relative;
+    color: white;
+}
+
+.cart-notification {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    font-size: 1rem;
+    top: .1rem;
+    right: .3rem;
+    background-color: red;
+    color: white;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+}
+
+.category-list {
+    height: 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.category {
+    font-family: Be Vietnam;
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgb(80, 2, 111);
+    margin-right: 1rem;
+}
+
+.active {
+    color: black;
+    font-weight: bold;
+}
+
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	zoom: 1;
+}

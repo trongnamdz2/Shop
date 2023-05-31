@@ -1,0 +1,63 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'payment/cart.css' %}">
+    <title>Cart</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="cart-container group">
+        <h1>Giỏ hàng</h1>
+        {% if user_cart %}
+            <table>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>SL</th>
+                    <th>Giá</th>
+                </tr>
+                {% for i in user_cart %}
+                    <tr>
+                        <td>
+                            {{i.item.title}}
+                            <form method="get">
+                                <button class="delete_item_cart_button" name="delete_item_cart" value="{{i.id}}"><i class="fa fa-trash-o"></i></button>
+                            </form>
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <div class="increase-button">
+                                    <form method="get">
+                                        <button name="increase-func" value="{{i.id}}">+</button>
+                                    </form>
+                                </div>
+                                {{i.quantity}}
+                                <div class="decrease-button">
+                                    <form method="get">
+                                        <button name="decrease-func" value="{{i.id}}">-</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{i.item.price|intcomma}}VNĐ</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="no-item">Bạn chưa thêm sản phẩm nào vào giỏ hàng hết!!</div>
+        {% endif %}
+        <div class="subtotal-section">
+            <h1>Tổng cộng ({{quantity}}): {{subtotal|intcomma}}</h1>
+        </div>
+        <a href="{% url 'checkout' %}" class="checkout-now">Thanh toán ngay</a>
+    </div>
+</body>
+{% include 'footer.html' %}
+</html>

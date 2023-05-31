@@ -1,0 +1,56 @@
+
+{% extends 'adminpanel/base.html' %}
+{% load humanize %}
+
+{% block title %}
+    Order #{{order.id}}
+{% endblock title %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Người đặt</th>
+            <th>user ngươid đặt</th>
+            <th>Địa chỉ</th>
+            <th>SĐT</th>
+            <th>Cổng</th>
+            <th>Giá trị</th>
+        </tr>
+        <tr>
+            <td>{{order.id}}</td>
+            <td>{{order.address.full_name}}</td>
+            <td>{{order.user.username}}</td>
+            <td>{{order.address.address}}</td>
+            <td>{{order.address.sdt}}</td>
+            {% if order.method == 'face-to-face' %}
+                <td>Trả tiền khi nhận hàng</td>
+            {% endif %}
+            <td>{{order.price|intcomma}}</td>
+        </tr>
+    </table>
+
+    <h1>Đơn gồm</h1>
+    <table>
+        <tr>
+            <th>Tên item</th>
+            <th>số lượng</th>
+        </tr>
+        {% for i in item %}
+            <tr>
+                <th>{{i.name_order}}</th>
+                <th>{{i.quantity}}</th>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="duyet">
+        <form action="" method="get">
+            <button name="duyet" value="{{order.id}}">Duyet</button>
+            <button name="xoa" value="{{order.id}}">Xoa</button>
+        </form>
+    </div>
+    
+    
+
+{% endblock body %}

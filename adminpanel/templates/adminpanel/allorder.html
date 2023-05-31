@@ -1,0 +1,36 @@
+{% extends 'adminpanel/base.html' %}
+
+{% block title %}
+    Tất cả đơn hàng
+{% endblock title %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Giá tiền</th>
+            <th>SL</th>
+            <th>Tài khoản trên web</th>
+            <th>Người đặt</th>
+            <th>Trạng thái</th>
+            <th>Ngày đặt</th>
+            <th>Thao tác</th>
+        </tr>
+        {% for i in all_order %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.quantity}}</td>
+                <td>{{i.user.username}}</td>
+                <td>{{i.address.full_name}}</td>
+                {% if i.status == 0 %}
+                    <td>Chờ duyệt</td>
+                {% elif i.status == 1 %}
+                    <td>Đã duyệt</td>
+                {% endif %}
+                <td>{{i.date}}</td>
+                <td><a href="{% url 'process' i.id %}">Duyệt đơn</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}

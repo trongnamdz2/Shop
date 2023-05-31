@@ -1,0 +1,13 @@
+{% extends 'adminpanel/base.html' %}
+
+{% block title %}
+    Đăng hàng | Admin Panel
+{% endblock title %}
+
+{% block body %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Dang hang</button>
+    </form>
+{% endblock body %}

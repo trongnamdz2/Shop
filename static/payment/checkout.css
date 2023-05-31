@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(219, 218, 218);
+}
+
+header {
+    border: 0;
+}
+
+.checkout-container {
+    font-family: Be Vietnam;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    width: 45%;
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: .7rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.order-summary {
+    float: left;
+    font-size: 1rem;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.order-summary table {
+    border: .1rem solid black;
+    border-collapse: collapse;
+}
+
+.order-summary p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+td {
+    border: .1rem solid black;
+    border-collapse: collapse;
+}
+
+
+.checkout-section {
+    float: right;
+    font-size: 50%;
+}
+
+
+#id_address {
+    width: 21.5rem;
+    height: 7.3rem;
+    resize: none;
+    font-family: Be Vietnam;
+}
+
+.no-bill {
+    display: block;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+

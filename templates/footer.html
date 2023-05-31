@@ -1,0 +1,116 @@
+<footer style="background-color: rgb(80, 2, 111); color: white;">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="{% url 'home' %}" class="logo">Logo</a>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="{% url 'home' %}">Trang Chủ</a></li>
+          <li><a href="#">Deal Đặc Biệt</a></li>
+          <li><a href="#">Về Chúng Tôi</a></li>
+          <li><a href="#">Liên Hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Theo dõi chúng tôi</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Logo. All rights reserved. | Designed by ...</p>
+    </div>
+  </footer>
+  <style>
+    .accent-color {
+      color: rgb(80, 2, 111);
+    }
+    
+    footer {
+      padding: 3rem 2rem 1rem 2rem;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 1.6rem;
+    }
+    
+    .footer-content {
+      font-size: 62.5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-logo img {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1rem;
+    }
+    
+    .footer-logo h1 {
+      font-size: 2.4rem;
+      margin: 0;
+    }
+  
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .footer-links ul li {
+      margin-right: 2rem;
+    }
+    
+    .footer-links ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links ul li a:hover {
+      color: rgb(80, 2, 111);
+    }
+    
+    .footer-social h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .footer-social ul li {
+      margin-right: 1rem;
+    }
+    
+    .footer-social ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 2.4rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-social ul li a:hover {
+      color: rgb(80, 2, 111);
+    }
+    
+    .footer-bottom {
+      font-size: 1.4rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+  </style>
+  

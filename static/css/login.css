@@ -1,0 +1,91 @@
+.login-form {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: whitesmoke;
+    width: 30rem;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    border-radius: .8rem;
+    padding-top: 2rem;
+}
+
+
+form h1 {
+    margin-bottom: 1rem;
+    color: rgb(80, 2, 111)
+}
+
+
+.username-input {
+    display: inline-block;
+    margin: auto;
+    border-radius: .2rem;
+    width: 15rem;
+    height: auto;
+    font-size: 1.5rem;
+}
+
+.password-input {
+    display: inline-block;
+    margin: auto;
+    border-radius: .2rem;
+    width: 15rem;
+    height: auto;
+    font-size: 1.5rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: rgb(80, 2, 111);
+}
+
+.login-button {
+    padding: .3rem .4rem;
+    font-size: 1rem;
+    font-family: Be Vietnam;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background-color: rgb(80, 2, 111);
+    color: white;
+    border: none;
+    border-radius: .4rem;
+}
+
+.login-button:hover {
+    background-color: whitesmoke;
+    color: rgb(80, 2, 111);
+    border: .1rem solid rgb(80, 2, 111);
+}
+
+
+.register-now {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.register-now a {
+    text-decoration: none;
+}
+
+.errorlist {
+    padding: 0;
+}
+
+.errorlist li {
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+    width: auto;
+    height: auto;
+    padding: .3rem .5rem;
+    background-color: rgba(255, 0, 0, 0.351);
+    border: .1rem solid rgb(227, 0, 0);
+    color: rgb(196, 0, 0);
+    border-radius: .4rem;
+    font-family: Be Vietnam;
+}

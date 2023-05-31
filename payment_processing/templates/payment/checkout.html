@@ -1,0 +1,63 @@
+{% load static %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'payment/checkout.css' %}">
+    <title>Thanh toán</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="checkout-container group">
+        <h1>Thanh toán</h1>
+
+        {% if user_cart %}
+            <div class="order-summary group">
+                <p>Hóa đơn</p>
+                <table>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>SL</th>
+                        <th>Giá</th>
+                    </tr>
+                    {% for i in user_cart %}
+                        <tr>
+                            <td>{{i.item.title}}</td>
+                            <td class="quantity">{{i.quantity}}</td>
+                            <td>{{i.item.price|intcomma}}VNĐ</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th>Thuế(10%):</th>
+                        <th></th>
+                        <th>{{tax|intcomma}}VNĐ</th>
+                    </tr>
+                    <tr>
+                        <th>Tổng cộng:</th>
+                        <th></th>
+                        <th>{{total|intcomma}}VNĐ</th>
+                    </tr>
+                </table>
+            </div>
+        
+            <div class="checkout-section">
+                <form method="post">
+                    {% csrf_token %}
+                    {{address_form.as_p}}
+                    <button class="ordernow-button" type="submit">Đặt ngay</button>
+                </form>
+            </div>
+        {% else %}
+            <p class="no-bill">Bạn không có hóa đơn!</p>
+        {% endif %}
+    </div>
+</body>
+{% include 'footer.html' %}
+</html>
