@@ -53,12 +53,14 @@ td {
 .checkout-section {
     float: right;
     font-size: 50%;
+    width: 48%;
+    margin-left: 2%;
 }
 
 
 #id_address {
-    width: 21.5rem;
-    height: 7.3rem;
+    width: 13.5rem;
+    height: 4.299999999999997rem;
     resize: none;
     font-family: Be Vietnam;
 }
