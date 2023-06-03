@@ -1,11 +1,9 @@
 from django import forms
 from base.models import Category
 
-get_category = Category.objects.all()
-
 def category():
     storage = []
-    for i in get_category:
+    for i in Category.objects.all():
         storage.append(tuple([i, i]))
     CATEGORY_CHOICES = tuple(storage)
     return CATEGORY_CHOICES

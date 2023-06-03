@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.utils.text import slugify
-from .forms import AddItemForm, AddCategoryForm
+from .forms import AddItemForm, AddCategoryForm, category
 
 from base.models import Item, Images, Category, Cart
 from payment_processing.models import Order
